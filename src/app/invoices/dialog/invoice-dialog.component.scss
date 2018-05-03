@@ -1,0 +1,68 @@
+@import '../../variables';
+
+.mat-dialog-title {
+  background-color: transparentize($purple, 0.9);
+  padding: 25px 25px 15px 25px;
+  color: $purple;
+}
+
+.mat-dialog-content {
+  margin: 0 25px;
+  padding: 15px 0;
+
+  .row {
+    color: $grey-medium;
+    display: flex;
+
+    &.row-padding {
+      padding: 10px 0;
+    }
+
+    .mat-form-field {
+      margin: 0 10px;
+    }
+
+    .column {
+      width: 50%;
+
+      &.left {
+        padding-left: 10px;
+      }
+
+      &.right {
+        padding-right: 10px;
+        text-align: right;
+      }
+
+      .custom-input {
+        color: $grey-medium;
+        text-align: right;
+        font-size: 16px;
+        border: none;
+        height: 32px;
+
+        &:focus {
+          outline-width: 0;
+        }
+      }
+
+      .result {
+        font-weight: bold;
+
+        &.result-amount {
+          margin-right: 13px;
+        }
+      }
+    }
+  }
+
+  .mat-divider {
+    margin: 0 10px;
+  }
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+  margin: 0 15px 15px 15px;
+  padding: 0;
+}

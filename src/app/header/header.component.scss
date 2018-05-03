@@ -1,0 +1,53 @@
+@import '../variables';
+
+.header {
+  background-color: $grey-dark;
+  width: calc(100% - 30px);
+  padding: 0 15px;
+  display: flex;
+  height: 84px;
+
+  .header-item {
+    justify-content: center;
+    align-items: center;
+    color: $grey-light;
+    padding: 0 10px;
+    display: flex;
+    height: 100%;
+
+    &.title {
+
+      h1 {
+        color: $grey-medium;
+        font-weight: normal;
+        transition: color .5s;
+
+        &.purple { color: darken($purple, 20%); }
+        &.green { color: darken($green, 20%); }
+        &.pink { color: darken($pink, 10%); }
+        &.orange { color: darken($orange, 10%); }
+        &.blue { color: darken($blue, 5%); }
+
+        span {
+          font-weight: 300;
+        }
+      }
+    }
+
+    &.placeholder {
+      flex-grow: 1;
+    }
+
+    &.profile {
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($grey-dark, 5%);
+      }
+
+      span {
+        margin: 0 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400,700');
+
+// resets
+html, body, h1, h2, h3, p { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+
+
+// header menu
+.mat-menu-panel.header-menu {
+  background-color: lighten(rgba(55, 55, 55, 1), 10%);
+  margin-top: -25px;
+  margin-left: -5px;
+
+   .mat-menu-content {
+
+     .mat-menu-item {
+       color: rgba(200, 200, 200, 1);
+
+       .mat-icon {
+         color: rgba(200, 200, 200, 1);
+         margin-right: 20px;
+       }
+     }
+   }
+}
+
+// rounded edges on dialog
+.mat-dialog-container {
+  border-radius: 25px !important;
+  padding: 0 !important;
+}

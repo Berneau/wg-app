@@ -1,0 +1,35 @@
+<li class="list-item animated fadeInUp"
+  [style.animation-delay]="index * 0.1 + 's'">
+
+  <div class="column avatar">
+    <mat-icon>account_circle</mat-icon>
+  </div>
+
+  <div class="column date">
+    <span>{{ invoice.date | date:'dd.MM.y, E' }}</span>
+  </div>
+
+  <div class="column placeholder"></div>
+
+  <div class="column amountPrivate">
+    <span *ngIf="invoice.amountPrivate > 0">{{ invoice.amountPrivate | decimal:'€':',' }}</span>
+  </div>
+
+  <div class="column amountToSplit">
+    <span>{{ invoice.amountToSplit | decimal:'€':',' }}</span>
+  </div>
+
+  <div class="column actions">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="delete(invoice, true)">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+
+</li>

@@ -1,0 +1,8 @@
+<ul class="invoice-list">
+  <invoice-item
+    [index]="idx"
+    *ngFor="let invoice of invoices; let idx = index"
+    (onDeleteInvoice)="deleteInvoice($event)"
+    [invoice]="invoice">
+  </invoice-item>
+</ul>

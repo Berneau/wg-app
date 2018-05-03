@@ -1,0 +1,76 @@
+<div class="content">
+
+  <div class="second-header">
+
+    <div class="title">
+      <h2>Invoices</h2>
+    </div>
+
+    <mat-form-field class="sort-select">
+      <mat-select [(value)]="selectedMonth" (change)="onDateChange()">
+        <mat-option *ngFor="let month of months" [value]="month.id">
+          {{ month.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="sort-select">
+      <mat-select [(value)]="selectedYear" (change)="onDateChange()">
+        <mat-option *ngFor="let year of years" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- <mat-form-field class="sort-select">
+      <mat-select [(value)]="selectedSort">
+        <mat-select-trigger>
+          Sort by <span class="capitalize">{{ selectedSort }}</span>
+        </mat-select-trigger>
+        <mat-option value="date">Date</mat-option>
+        <mat-option value="amount">Amount</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <div class="placeholder"></div>
+
+    <button mat-raised-button
+      class="summary-button"
+      (click)="openSummary()">
+      Summary
+    </button>
+
+  </div>
+
+  <div class="list-header">
+
+    <div class="user">User</div>
+
+    <div class="date">Date</div>
+
+    <div class="placeholder"></div>
+
+    <div class="amountPrivate">Private</div>
+
+    <div class="amountToSplit">Split</div>
+
+    <div class="actions"></div>
+
+  </div>
+
+  <div class="list-container">
+
+    <invoice-list
+      [invoices]="invoices"
+      (onDeleteInvoice)="deleteInvoice($event)">
+    </invoice-list>
+
+  </div>
+
+  <button mat-fab
+    class="animated zoomInRight"
+    (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+</div>

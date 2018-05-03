@@ -1,0 +1,85 @@
+<div mat-dialog-title>New Invoice</div>
+
+<div mat-dialog-content>
+
+  <div class="row">
+
+    <mat-form-field>
+      <mat-select placeholder="Day" [(value)]="currentDay">
+        <mat-option *ngFor="let day of days" [value]="day">
+          {{ day }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Month" [(value)]="currentMonth">
+        <mat-option *ngFor="let month of months" [value]="month.id">
+          {{ month.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Year" [(value)]="currentYear">
+        <mat-option *ngFor="let year of years" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="row row-padding">
+
+    <div class="column left">
+      <span>Full Amount</span>
+    </div>
+
+    <div class="column right">
+      <input type="number"
+        class="custom-input"
+        step="0.01"
+        [value]="amountOriginal | decimal"
+        (blur)="onBlur($event, 'original')">€
+    </div>
+
+  </div>
+
+  <div class="row row-padding">
+
+    <div class="column left">
+      <span>Private</span>
+    </div>
+
+    <div class="column right">
+      <input type="number"
+        class="custom-input"
+        step="0.01"
+        [value]="amountPrivate | decimal"
+        (blur)="onBlur($event, 'private')">€
+    </div>
+  </div>
+
+
+  <mat-divider></mat-divider>
+
+  <div class="row row-padding">
+
+    <div class="column left">
+      <span class="result">Amount to Split</span>
+    </div>
+
+    <div class="column right">
+      <span class="result result-amount">{{ amountToSplit | decimal:null:',' }}</span>€
+    </div>
+  </div>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</div>

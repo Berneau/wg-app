@@ -1,0 +1,16 @@
+@import '../variables';
+
+.mat-dialog-title {
+  margin: 25px 25px 15px 25px;
+}
+
+.mat-dialog-content {
+  margin: 0 25px;
+  padding: 0;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+  margin: 0 25px;
+  display: flex;
+}

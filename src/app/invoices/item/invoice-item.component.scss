@@ -1,0 +1,45 @@
+@import '../../variables';
+
+.list-item {
+  background-color: $white;
+  animation-duration: .4s;
+  align-items: center;
+  border-radius: 5px;
+  color: $grey-dark;
+  cursor: pointer;
+  display: flex;
+  margin: 4px 0;
+  height: 48px;
+  width: 100%;
+
+  .column {
+    padding: 0 10px;
+
+    &.avatar {
+      justify-content: center;
+      display: flex;
+      width: 40px;
+    }
+
+    &.date {
+      width: 120px;
+    }
+
+    &.placeholder {
+      flex-grow: 1;
+    }
+
+    &.amountPrivate {
+      color: $grey-medium;
+      width: 70px;
+    }
+
+    &.amountToSplit {
+      width: 70px;
+    }
+
+    &.actions {
+      width: 40px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<div class="app-container" [class.is-mobile]="mobileQuery.matches">
+
+  <header></header>
+
+  <mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #snav
+      class="sidenav mat-elevation-z1"
+      [opened]="mobileQuery.matches ? false : true"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      fixedTopGap="84"
+      [fixedInViewport]="mobileQuery.matches">
+
+      <mat-nav-list>
+        <a mat-list-item
+          class="blue"
+          disableRipple="true"
+          routerLinkActive="active"
+          routerLink="/dashboard">
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </a>
+
+        <a mat-list-item
+          class="purple"
+          disableRipple="true"
+          routerLinkActive="active"
+          routerLink="/invoices">
+          <mat-icon>monetization_on</mat-icon>
+          Invoices
+        </a>
+
+        <a mat-list-item
+          class="green"
+          disableRipple="true"
+          routerLinkActive="active"
+          routerLink="/tasks">
+          <mat-icon>assignment</mat-icon>
+          Tasks
+        </a>
+
+        <a mat-list-item
+          class="orange"
+          disableRipple="true"
+          routerLinkActive="active"
+          routerLink="/users">
+          <mat-icon>account_circle</mat-icon>
+          Users
+        </a>
+
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-content">
+
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>

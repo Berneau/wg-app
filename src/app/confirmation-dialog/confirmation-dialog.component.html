@@ -1,0 +1,20 @@
+<div mat-dialog-title>{{ data.title }}</div>
+
+<div mat-dialog-content>
+  {{ data.text }}
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button
+    class="abort"
+    [mat-dialog-close]="false"
+    *ngIf="data.abort">
+    {{ data.abort }}
+  </button>
+
+  <button mat-button
+    class="confirm"
+    [mat-dialog-close]="true">
+    {{ data.confirm }}
+  </button>
+</div>

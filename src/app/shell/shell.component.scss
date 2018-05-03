@@ -1,0 +1,53 @@
+@import '../variables';
+
+@mixin item-active($color) {
+  background-color: transparentize($color, 0.8);
+  color: darken($color, 20%);
+}
+
+.app-container {
+  flex-direction: column;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  &.is-mobile {
+
+    .header-primary {
+      position: fixed;
+      z-index: 2;
+    }
+
+    .sidenav-container {
+      flex: 1 0 auto;
+    }
+  }
+
+  .sidenav {
+    width: 250px;
+
+    .mat-nav-list {
+
+      .mat-list-item {
+        transition: color, background-color .3s;
+        color: $grey-medium;
+
+        &.active.purple { @include item-active($purple); }
+        &.active.green { @include item-active($green); }
+        &.active.orange { @include item-active($orange); }
+        &.active.blue { @include item-active($blue); }
+
+        .mat-icon {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .sidenav-container {
+    flex: 1;
+  }
+}
