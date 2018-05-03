@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
+    "start": "ng serve --port=4201",
+    "prod": "ng serve --prod --port=4201",
+    "build-prod": "ng build --prod --aot --base-href './' --build-optimizer=false",
+    "build": "ng build --aot --base-href './'",
+    "dry-build": "ng build --aot --base-href './' && rm -rf dist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -1,4 +1,4 @@
 import { environment } from '../../environments/environment';
 
-// export const apiUrl = environment.production ? 'https://www.q-tax.at/v1' : 'https://beta.q-tax.at/v1';
-export const apiUrl = 'http://localhost:3000/api';
+export const apiUrl = environment.production ? 'https://frozen-ravine-62358.herokuapp.com/api' : 'http://localhost:3000/api';
+// export const apiUrl = 'http://localhost:3000/api';
