@@ -9,6 +9,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { AdminGuard } from './_guards/admin.guard';
 
 export const appRoutes: Routes = [
   {
@@ -42,7 +43,8 @@ export const appRoutes: Routes = [
       },
       {
         path: 'users',
-        component: UsersComponent
+        component: UsersComponent,
+        canActivate: [ AdminGuard ]
       },
       {
         path: '',

@@ -1,6 +1,6 @@
 export class Invoice {
   _id?: string;
-  ownerId?: string; // NOTE: for later use if filter by user is required
+  ownerId?: string;
   amountOriginal: number;
   amountPrivate: number;
   amountToSplit: number;

@@ -1,16 +1,26 @@
 <div class="content">
 
+  <!-- <div id="scene">
+    <div class="background" data-depth="0.2"></div>
+  </div> -->
+
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
 
-    <mat-form-field>
-      <input matInput placeholder="Username" formControlName="username">
-    </mat-form-field>
+    <mat-card>
 
-    <mat-form-field>
-      <input matInput placeholder="Password" formControlName="password">
-    </mat-form-field>
+      <h3>WG-Manager</h3>
 
-    <button mat-button type="submit">Login</button>
+      <mat-form-field>
+        <input matInput placeholder="Username" type="text" formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" formControlName="password">
+      </mat-form-field>
+
+      <button mat-button type="submit">Login</button>
+
+    </mat-card>
 
   </form>
 

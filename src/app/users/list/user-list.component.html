@@ -1,0 +1,7 @@
+<ul class="user-list">
+  <user-item
+    [index]="idx"
+    *ngFor="let user of users; let idx = index"
+    [user]="user">
+  </user-item>
+</ul>

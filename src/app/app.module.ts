@@ -16,7 +16,8 @@ import {
   MatDialogModule,
   MatInputModule,
   MatDividerModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatCardModule
 } from '@angular/material';
 
 import 'rxjs/add/operator/map';
@@ -27,27 +28,37 @@ import { appRoutes } from './app.routes';
 import { ShellComponent } from './shell/shell.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { InvoiceService } from './_api/invoice.service';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { InvoiceDialogComponent } from './invoices/dialog/invoice-dialog.component';
 import { InvoiceListComponent } from './invoices/list/invoice-list.component';
 import { InvoiceItemComponent } from './invoices/item/invoice-item.component';
+import { SummaryDialogComponent } from './invoices/summary/summary-dialog.component';
+
 import { TasksComponent } from './tasks/tasks.component';
+
+import { UserService } from './_api/user.service';
+import { UsersComponent } from './users/users.component';
+import { UserListComponent } from './users/list/user-list.component';
+import { UserItemComponent } from './users/item/user-item.component';
+
+import { ProfileComponent } from './profile/profile.component';
+
 import { TitleColorService } from './_services/title-color.service';
 import { SidenavToggleService } from './_services/sidenav-toggle.service';
-import { ProfileComponent } from './profile/profile.component';
-import { UsersComponent } from './users/users.component';
-import { InvoiceService } from './_api/invoice.service';
 import { AuthService } from './_api/auth.service';
 import { DecimalPipe } from './_pipes/decimal.pipe';
 import { NotificationService } from './_services/notification.service';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { CustomHttpInterceptor } from './_api/_http.interceptor';
 import { Store } from './app.store';
 import { AuthGuard } from './_guards/auth.guard';
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
-import { SummaryDialogComponent } from './invoices/summary/summary-dialog.component';
+import { AdminGuard } from './_guards/admin.guard';
 
 @NgModule({
   declarations: [
@@ -67,7 +78,9 @@ import { SummaryDialogComponent } from './invoices/summary/summary-dialog.compon
     UsersComponent,
     DecimalPipe,
     ConfirmationDialogComponent,
-    SummaryDialogComponent
+    SummaryDialogComponent,
+    UserListComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +98,8 @@ import { SummaryDialogComponent } from './invoices/summary/summary-dialog.compon
     MatDialogModule,
     MatInputModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [
     MediaMatcher,
@@ -93,9 +107,11 @@ import { SummaryDialogComponent } from './invoices/summary/summary-dialog.compon
     TitleColorService,
     SidenavToggleService,
     InvoiceService,
+    UserService,
     AuthService,
     NotificationService,
     AuthGuard,
+    AdminGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomHttpInterceptor,

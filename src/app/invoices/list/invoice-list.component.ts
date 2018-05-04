@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Invoice } from '../../_models/invoice.model';
 
@@ -7,17 +7,13 @@ import { Invoice } from '../../_models/invoice.model';
   templateUrl: './invoice-list.component.html',
   styleUrls: ['./invoice-list.component.scss']
 })
-export class InvoiceListComponent implements OnInit {
+export class InvoiceListComponent {
   @Input() invoices: Invoice[];
   @Output() onDeleteInvoice = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   deleteInvoice(e) {
     this.onDeleteInvoice.emit(e);
   }
-
 }

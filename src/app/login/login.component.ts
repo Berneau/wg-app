@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as Parallax from 'parallax-js';
 
 import { AuthService } from '../_api/auth.service';
 import { Store } from '../app.store';
@@ -24,6 +25,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+
+    // this.initParalax();
   }
 
   createForm() {
@@ -33,8 +36,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  onSubmit(form) {
+  initParalax() {
+    let scene = document.getElementById('scene');
+    let parallaxInstance = new Parallax(scene);
+  }
 
+  onSubmit(form) {
     this.authService.login(form).subscribe(
       (response) => {
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TitleColorService } from '../_services/title-color.service';
+import { NotificationService } from '../_services/notification.service';
 
 @Component({
   selector: 'dashboard',
@@ -10,7 +11,8 @@ import { TitleColorService } from '../_services/title-color.service';
 export class DashboardComponent {
 
   constructor(
-    private titleColorService: TitleColorService,
+    private handle: NotificationService,
+    private titleColorService: TitleColorService
   ) { }
 
   ngOnInit() {

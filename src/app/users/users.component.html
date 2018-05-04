@@ -1,3 +1,30 @@
-<p>
-  users works!
-</p>
+<div class="content">
+
+  <div class="list-header">
+
+    <div class="user"></div>
+
+    <div class="username">Username</div>
+
+    <div class="placeholder"></div>
+
+    <div class="admin">Status</div>
+
+    <div class="actions"></div>
+
+  </div>
+
+  <div class="list-container">
+
+    <user-list
+      [users]="users">
+    </user-list>
+
+  </div>
+
+  <button mat-fab
+    class="animated zoomInRight"
+    (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

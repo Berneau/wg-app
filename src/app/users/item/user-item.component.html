@@ -1,0 +1,31 @@
+<li class="list-item animated fadeInUp"
+  [style.animation-delay]="index * 0.1 + 's'">
+
+  <div class="column avatar">
+    <mat-icon>account_circle</mat-icon>
+  </div>
+
+  <div class="column username">
+    <span>{{ user.username }}</span>
+  </div>
+
+  <div class="column placeholder"></div>
+
+  <div class="column admin">
+    <span>{{ user.isAdmin ? 'Admin' : null }}</span>
+  </div>
+
+  <div class="column actions">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+
+</li>

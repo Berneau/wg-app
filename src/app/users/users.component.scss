@@ -1,0 +1,37 @@
+@import '../variables';
+
+.content {
+  @include content();
+
+  .list-header {
+    align-items: center;
+    padding: 0 25px;
+    display: flex;
+    height: 36px;
+
+    div {
+      color: transparentize($orange, .5);
+      text-transform: uppercase;
+      padding: 0 10px;
+      font-size: 14px;
+
+      &.user { width: 40px; }
+      &.username { width: 120px; }
+      &.placeholder { flex-grow: 1; }
+      &.admin { width: 50px; }
+      &.actions { width: 40px; }
+    }
+
+  }
+
+  .list-container {
+    padding: 0 25px;
+  }
+
+  .mat-fab {
+    background-color: $orange;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+}

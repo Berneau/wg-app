@@ -1,0 +1,33 @@
+@import '../variables';
+
+.content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  // #scene {
+  //   position: absolute;
+  //   overflow: hidden;
+  //   width: 100%;
+  //   height: 100%;
+  //
+  //   .background {
+  //     background-image: url('../../assets/bg.jpg');
+  //     background-position: center center;
+  //     height: calc(100% + 100px);
+  //     width: calc(100% + 100px);
+  //     background-size: cover;
+  //     left: -50px !important;
+  //     top: -50px !important;
+  //     position: absolute;
+  //   }
+  // }
+
+  .mat-card {
+    flex-direction: column;
+    display: flex;
+    width: 300px;
+  }
+}

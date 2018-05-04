@@ -30,16 +30,17 @@
           Invoices
         </a>
 
-        <a mat-list-item
+        <!-- <a mat-list-item
           class="green"
           disableRipple="true"
           routerLinkActive="active"
           routerLink="/tasks">
           <mat-icon>assignment</mat-icon>
           Tasks
-        </a>
+        </a> -->
 
         <a mat-list-item
+          *ngIf="currentUser.isAdmin"
           class="orange"
           disableRipple="true"
           routerLinkActive="active"
