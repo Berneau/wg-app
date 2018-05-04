@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Invoice } from '../../_models/invoice.model';
-import { DecimalPipe } from '../../_pipes/decimal.pipe';
 
 @Component({
   selector: 'invoice-item',

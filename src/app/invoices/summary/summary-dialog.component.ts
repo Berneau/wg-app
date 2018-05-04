@@ -3,6 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { Invoice } from '../../_models/invoice.model';
 import { InvoiceService } from '../../_api/invoice.service';
+import { UserService } from '../../_api/user.service';
+import { User } from '../../_models/user.model';
 import { NotificationService } from '../../_services/notification.service';
 
 @Component({
@@ -11,18 +13,30 @@ import { NotificationService } from '../../_services/notification.service';
   styleUrls: ['./summary-dialog.component.scss']
 })
 export class SummaryDialogComponent implements OnInit {
+  usersForPipe: User[];
+  users: User[];
+
 
   constructor(
     public dialogRef: MatDialogRef<SummaryDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private invoiceService: InvoiceService,
-    private handle: NotificationService
+    private handle: NotificationService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
     this.invoiceService.getSummary(this.data.month).subscribe(
-      (response) => { console.log(response); },
-      (error) => { console.log(error); }
+      (response) => {
+        console.log('foo', response.users);
+        this.users = response.users;
+      },
+      (error) => { this.handle.log('Can\'t load summary', error); }
+    )
+
+    this.userService.readAll().subscribe(
+      (response) => { this.usersForPipe = response; },
+      (error) => { this.handle.log('Can\'t load users', error); }
     )
   }
 }

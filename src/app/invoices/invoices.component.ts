@@ -64,7 +64,11 @@ export class InvoicesComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(InvoiceDialogComponent)
+    this.dialog.open(InvoiceDialogComponent, {
+      data: {
+        selectedMonth: this.selectedMonth
+      }
+    })
     .afterClosed()
     .subscribe((data) => {
       if (data) this.fetchInvoices();
@@ -73,6 +77,7 @@ export class InvoicesComponent implements OnInit {
 
   openSummary() {
     this.dialog.open(SummaryDialogComponent, {
+      width: '400px',
       data: {
         month: this.selectedMonth,
         monthAsText: this.months[this.selectedMonth].name

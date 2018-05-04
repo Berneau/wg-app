@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { getDates } from '../../app.helpers';
 import { DecimalPipe } from '../../_pipes/decimal.pipe';
@@ -27,6 +27,7 @@ export class InvoiceDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<InvoiceDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private invoiceService: InvoiceService,
     private store: Store,
     private handle: NotificationService
@@ -97,7 +98,6 @@ export class InvoiceDialogComponent implements OnInit {
   }
 
   invoiceIsVisible(invoice: Invoice): boolean {
-    let m = new Date().getMonth();
-    return m === invoice.month;
+    return this.data.selectedMonth === invoice.month;
   }
 }

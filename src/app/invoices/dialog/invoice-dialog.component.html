@@ -14,7 +14,7 @@
 
     <mat-form-field>
       <mat-select placeholder="Month" [(value)]="currentMonth">
-        <mat-option *ngFor="let month of months" [value]="month.id">
+        <mat-option *ngFor="let month of months.reverse()" [value]="month.id">
           {{ month.name }}
         </mat-option>
       </mat-select>

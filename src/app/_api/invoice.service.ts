@@ -53,7 +53,6 @@ export class InvoiceService {
 
     return this.http.get(`operations/summary?month=${month}`)
     .map((response: any) => {
-      console.log('in service', response);
       return response.summary;
     })
   }

@@ -53,6 +53,7 @@ import { TitleColorService } from './_services/title-color.service';
 import { SidenavToggleService } from './_services/sidenav-toggle.service';
 import { AuthService } from './_api/auth.service';
 import { DecimalPipe } from './_pipes/decimal.pipe';
+import { UsernamePipe } from './_pipes/username.pipe';
 import { NotificationService } from './_services/notification.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { CustomHttpInterceptor } from './_api/_http.interceptor';
@@ -77,6 +78,7 @@ import { AdminGuard } from './_guards/admin.guard';
     ProfileComponent,
     UsersComponent,
     DecimalPipe,
+    UsernamePipe,
     ConfirmationDialogComponent,
     SummaryDialogComponent,
     UserListComponent,

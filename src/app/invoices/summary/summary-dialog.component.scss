@@ -1,12 +1,22 @@
 @import '../../variables';
 
 .mat-dialog-title {
+  background-color: transparentize($purple, 0.9);
   padding: 25px 25px 15px 25px;
+  color: $purple;
 }
 
 .mat-dialog-content {
+  padding: 15px 0 30px 0;
   margin: 0 25px;
-  padding: 15px 0;
+
+  .row {
+    display: flex;
+    width: 100%;
+
+    .placeholder { flex-grow: 1; }
+    .amount { color: $grey-medium; }
+  }
 }
 
 .mat-dialog-actions {

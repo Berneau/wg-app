@@ -2,6 +2,15 @@
 
 <div mat-dialog-content>
 
+  <div class="row" *ngFor="let user of users">
+
+    <span class="username">{{ user.id | username:usersForPipe }}</span>
+
+    <span class="placeholder"></span>
+
+    <span class="amount">{{ user.sum | decimal:'€':',' }}</span>
+
+  </div>
 
 </div>
 
