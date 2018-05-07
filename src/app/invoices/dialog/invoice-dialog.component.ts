@@ -43,7 +43,7 @@ export class InvoiceDialogComponent implements OnInit {
     let dates = getDates();
     let dayAmount = dates.months[dates.currentMonth].days;
 
-    this.months = dates.months;
+    this.months = dates.months.reverse();
     this.years = dates.years;
     this.days = this.getDayArrayByAmount(dayAmount);
     this.currentDay = dates.currentDay;

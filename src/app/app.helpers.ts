@@ -11,7 +11,7 @@ export function getDates() {
   let currentYear = today.getFullYear();
 
   for (let i = 2018; i <= currentYear; i++) {
-    years.push(i);
+    console.log('foo');
   }
 
   return {

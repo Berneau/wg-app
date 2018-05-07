@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ng serve --port=4201",
     "prod": "ng serve --prod --port=4201",
-    "build-prod": "ng build --prod --aot --base-href './' --build-optimizer=false",
+    "build-prod": "ng build --prod --aot --base-href './'",
     "build": "ng build --aot --base-href './'",
     "dry-build": "ng build --aot --base-href './' && rm -rf dist/",
     "test": "ng test",
