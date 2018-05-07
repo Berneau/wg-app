@@ -17,8 +17,7 @@ export class AuthGuard implements CanActivate {
   ) { }
 
   canActivate(): Observable<boolean> {
-
-    if (!this.store.initLS()) return Observable.of(false);
+    if (!this.store.initLS()) this.router.navigate(['/logout']);
 
     let token = this.store.readFromConfig('jwttoken');
 
