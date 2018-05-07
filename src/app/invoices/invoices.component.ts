@@ -53,7 +53,7 @@ export class InvoicesComponent implements OnInit {
   calculateDate() {
     let dates = getDates();
 
-    this.months = dates.months
+    this.months = dates.months.reverse();
     this.years = dates.years;
     this.selectedYear = dates.currentYear;
     this.selectedMonth = dates.currentMonth;
@@ -76,13 +76,22 @@ export class InvoicesComponent implements OnInit {
   }
 
   openSummary() {
+    let m = this.getMonthById();
+
     this.dialog.open(SummaryDialogComponent, {
       width: '400px',
       data: {
         month: this.selectedMonth,
-        monthAsText: this.months[this.selectedMonth].name
+        monthAsText: m.name
       }
     });
+  }
+
+  getMonthById() {
+    for (let i = 0; i < this.months.length; i++) {
+      if (this.months[i].id === this.selectedMonth) return this.months[i];
+    }
+    return {};
   }
 
   deleteInvoice(e) {

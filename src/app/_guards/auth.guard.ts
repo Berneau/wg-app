@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): Observable<boolean> {
 
-    this.store.initLS();
+    if (!this.store.initLS()) return Observable.of(false);
 
     let token = this.store.readFromConfig('jwttoken');
 

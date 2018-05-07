@@ -5,6 +5,7 @@ import { NotificationService } from './_services/notification.service';
 
 @Injectable()
 export class Store {
+  isInitialised: boolean = false;
 
   private config = {
     currentUser: null,
@@ -16,6 +17,9 @@ export class Store {
   ) { }
 
   initLS() {
+    if (this.isInitialised) return true;
+    else this.isInitialised;
+
     let jwttoken = this.readFromLocalStorage('jwttoken');
     let currentUser = this.readFromLocalStorage('currentUser');
 

@@ -17,5 +17,4 @@ export class InvoiceItemComponent {
   delete(invoice, shouldDelete) {
     this.onDeleteInvoice.emit({ invoice, shouldDelete });
   }
-
 }
