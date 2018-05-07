@@ -11,11 +11,22 @@
   margin: 0 25px;
 
   .row {
+    padding: 10px 0;
     display: flex;
     width: 100%;
 
-    .placeholder { flex-grow: 1; }
-    .amount { color: $grey-medium; }
+    .placeholder {
+      flex-grow: 1;
+    }
+
+    .amount {
+      text-align: right;
+      width: 80px;
+
+      &.grey { color: $grey-medium; }
+      &.positive { color: $status-green; }
+      &.negative { color: $status-red; }
+    }
   }
 }
 

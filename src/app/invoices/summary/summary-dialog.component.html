@@ -8,8 +8,27 @@
 
     <span class="placeholder"></span>
 
-    <span class="amount">{{ user.sum | decimal:'€':',' }}</span>
+    <span class="amount grey">{{ user.sum | decimal:'€':',' }}</span>
 
+    <span class="amount"
+      [class.positive]="user.sum - splitSum > 0"
+      [class.negative]="user.sum - splitSum < 0">
+      {{ (user.sum - splitSum) | decimal:'€':',' }}
+    </span>
+
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="row">
+
+    <span class="result">Split Sum</span>
+
+    <span class="placeholder"></span>
+
+    <span class="amount grey">{{ splitSum | decimal:'€':',' }}</span>
+
+    <span class="amount"></span>
   </div>
 
 </div>

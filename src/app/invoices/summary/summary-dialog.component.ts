@@ -15,6 +15,8 @@ import { NotificationService } from '../../_services/notification.service';
 export class SummaryDialogComponent implements OnInit {
   usersForPipe: User[];
   users: User[];
+  splitSum: number;
+  sum: number;
 
 
   constructor(
@@ -28,8 +30,9 @@ export class SummaryDialogComponent implements OnInit {
   ngOnInit() {
     this.invoiceService.getSummary(this.data.month).subscribe(
       (response) => {
-        console.log('foo', response.users);
         this.users = response.users;
+        this.sum = this.calculateSum(this.users);
+        this.splitSum = this.sum / 3;
       },
       (error) => { this.handle.log('Can\'t load summary', error); }
     )
@@ -38,5 +41,15 @@ export class SummaryDialogComponent implements OnInit {
       (response) => { this.usersForPipe = response; },
       (error) => { this.handle.log('Can\'t load users', error); }
     )
+  }
+
+  calculateSum(arr) {
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i].sum;
+    }
+
+    return sum;
   }
 }
