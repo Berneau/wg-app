@@ -31,8 +31,7 @@ export class SummaryDialogComponent implements OnInit {
     this.invoiceService.getSummary(this.data.month).subscribe(
       (response) => {
         this.users = response.users;
-        this.sum = this.calculateSum(this.users);
-        this.splitSum = this.sum / 3;
+        this.calculateSum(this.users);
       },
       (error) => { this.handle.log('Can\'t load summary', error); }
     )
@@ -50,6 +49,7 @@ export class SummaryDialogComponent implements OnInit {
       sum += arr[i].sum;
     }
 
-    return sum;
+    this.sum = sum;
+    this.splitSum = sum / this.users.length;
   }
 }
