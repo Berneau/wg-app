@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
       (response) => {
 
         this.store.saveToConfig('currentUser', response.user, true);
-        this.store.saveToConfig('jwttoken', response.token, true);
+        this.store.saveToConfig('jwttoken', response.jwt, true);
 
         this.router.navigate(['/']);
 

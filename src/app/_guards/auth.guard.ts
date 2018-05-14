@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { isTokenValid } from '../app.helpers';
 
 // import { AuthService } from '../_api/auth.service';
 import { Store } from '../app.store';
@@ -19,11 +20,10 @@ export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean> {
     if (!this.store.initLS()) this.router.navigate(['/logout']);
 
-    let token = this.store.readFromConfig('jwttoken');
+    let jwt = this.store.readFromConfig('jwttoken');
 
-    // no token found
-
-    if (!token) {
+    // test if token is valid
+    if (!isTokenValid(jwt)) {
       this.router.navigate(['/logout']);
       return Observable.of(false);
     }

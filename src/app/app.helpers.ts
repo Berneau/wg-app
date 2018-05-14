@@ -1,3 +1,21 @@
+export function isTokenValid(jwt) {
+
+  // check if obj is empty
+  if (!jwt) return false;
+
+  // token or expiryDate is empty
+  if (!jwt.token || !jwt.expiresAt) return false;
+
+  // token is expired
+  if (jwt.expiresAt < Date.now()) {
+    console.log('token is expired');
+    return false;
+  }
+
+  // token is valid
+  return true;
+}
+
 export function capitalizeFirstLetter(string) {
   if (!string) return;
   return string.charAt(0).toUpperCase() + string.slice(1);
