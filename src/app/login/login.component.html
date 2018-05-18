@@ -18,7 +18,10 @@
         <input matInput placeholder="Password" type="password" formControlName="password">
       </mat-form-field>
 
-      <button mat-button type="submit">Login</button>
+      <button color="primary" mat-raised-button type="submit">
+        Login
+        <mat-icon *ngIf="loading">autorenew</mat-icon>
+      </button>
 
     </mat-card>
 

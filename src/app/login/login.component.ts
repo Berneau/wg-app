@@ -14,6 +14,7 @@ import { NotificationService } from '../_services/notification.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -42,16 +43,20 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form) {
+    this.loading = true;
     this.authService.login(form).subscribe(
       (response) => {
 
+        this.loading = false;
         this.store.saveToConfig('currentUser', response.user, true);
         this.store.saveToConfig('jwttoken', response.jwt, true);
 
         this.router.navigate(['/']);
-
       },
-      (error) => { this.handle.openSnackbar('Wrong username or password', error); }
+      (error) => {
+        this.handle.openSnackbar('Wrong username or password', error);
+        this.loading = false;
+      }
     )
   }
 

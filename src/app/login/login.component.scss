@@ -29,5 +29,24 @@
     flex-direction: column;
     display: flex;
     width: 300px;
+
+    .mat-raised-button {
+      position: relative;
+
+      .mat-icon {
+        animation-iteration-count: infinite;
+        animation-name: anim-spin;
+        animation-duration: 1s;
+        position: absolute;
+        color: $white;
+        right: 6px;
+        top: 3px;
+      }
+    }
   }
+}
+
+@keyframes anim-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

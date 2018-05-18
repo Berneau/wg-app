@@ -5,7 +5,7 @@ import { isTokenValid } from '../app.helpers';
 
 // import { AuthService } from '../_api/auth.service';
 import { Store } from '../app.store';
-// import { NotificationService } from '../_services/notification.service';
+import { NotificationService } from '../_services/notification.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
     private store: Store,
-    // private handle: NotificationService
+    private handle: NotificationService
     // private authService: AuthService
   ) { }
 
@@ -24,6 +24,7 @@ export class AuthGuard implements CanActivate {
 
     // test if token is valid
     if (!isTokenValid(jwt)) {
+      this.handle.openSnackbar('Session expired');
       this.router.navigate(['/logout']);
       return Observable.of(false);
     }

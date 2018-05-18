@@ -34,10 +34,10 @@ export class CustomHttpInterceptor implements HttpInterceptor {
     this.store = this.injector.get(Store);
 
     // set accesstoken if available
-    let token = this.store.readFromConfig('jwttoken');
+    let jwttoken = this.store.readFromConfig('jwttoken');
 
-    if (token) {
-      request = request.clone({ headers: request.headers.set('Authorization', token) });
+    if (jwttoken) {
+      request = request.clone({ headers: request.headers.set('Authorization', jwttoken.token) });
     }
 
     // prefix url
