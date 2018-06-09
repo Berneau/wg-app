@@ -3,6 +3,24 @@
 .content {
   @include content();
 
+  .second-header {
+    width: calc(100% - 50px);
+    align-items: center;
+    padding: 0 25px;
+    display: flex;
+    height: 84px;
+
+    .title {
+      margin-right: 15px;
+
+      h2 {
+        padding-bottom: 10px;
+        font-weight: normal;
+        color: $orange;
+      }
+    }
+  }
+
   .list-header {
     align-items: center;
     padding: 0 25px;
