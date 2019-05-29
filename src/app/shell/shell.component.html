@@ -4,7 +4,7 @@
 
   <mat-sidenav-container class="sidenav-container">
 
-    <mat-sidenav #snav
+    <!-- <mat-sidenav #snav
       class="sidenav mat-elevation-z1"
       [opened]="mobileQuery.matches ? false : true"
       [mode]="mobileQuery.matches ? 'over' : 'side'"
@@ -40,6 +40,15 @@
         </a>
 
         <a mat-list-item
+          class="teal"
+          disableRipple="true"
+          routerLinkActive="active"
+          routerLink="/categories">
+          <mat-icon>label</mat-icon>
+          Categories
+        </a>
+
+        <a mat-list-item
           *ngIf="currentUser.isAdmin"
           class="orange"
           disableRipple="true"
@@ -51,7 +60,7 @@
 
       </mat-nav-list>
 
-    </mat-sidenav>
+    </mat-sidenav> -->
 
     <mat-sidenav-content class="sidenav-content">
 

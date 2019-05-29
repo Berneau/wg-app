@@ -39,6 +39,7 @@
         &.active.green { @include item-active($green); }
         &.active.orange { @include item-active($orange); }
         &.active.blue { @include item-active($blue); }
+        &.active.teal { @include item-active($teal); }
 
         .mat-icon {
           margin-right: 15px;

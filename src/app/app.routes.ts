@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
 import { AuthGuard } from './_guards/auth.guard';
@@ -25,22 +26,26 @@ export const appRoutes: Routes = [
     component: ShellComponent,
     canActivate: [ AuthGuard ],
     children: [
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
+      // {
+      //   path: 'dashboard',
+      //   component: DashboardComponent
+      // },
       {
         path: 'invoices',
         component: InvoicesComponent
       },
-      {
-        path: 'tasks',
-        component: TasksComponent
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent
-      },
+      // {
+      //   path: 'tasks',
+      //   component: TasksComponent
+      // },
+      // {
+      //   path: 'categories',
+      //   component: CategoriesComponent
+      // },
+      // {
+      //   path: 'profile',
+      //   component: ProfileComponent
+      // },
       {
         path: 'users',
         component: UsersComponent,
@@ -48,12 +53,12 @@ export const appRoutes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'invoices',
         pathMatch: 'full'
       },
       {
         path: '**',
-        redirectTo: 'dashboard',
+        redirectTo: 'invoices',
         pathMatch: 'full'
       }
     ]

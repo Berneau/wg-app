@@ -40,7 +40,11 @@ import { InvoiceListComponent } from './invoices/list/invoice-list.component';
 import { InvoiceItemComponent } from './invoices/item/invoice-item.component';
 import { SummaryDialogComponent } from './invoices/summary/summary-dialog.component';
 
+import { TaskService } from './_api/task.service';
 import { TasksComponent } from './tasks/tasks.component';
+
+import { CategoryService } from './_api/category.service';
+import { CategoriesComponent } from './categories/categories.component';
 
 import { UserService } from './_api/user.service';
 import { UsersComponent } from './users/users.component';
@@ -75,6 +79,7 @@ import { AdminGuard } from './_guards/admin.guard';
     InvoiceListComponent,
     InvoiceItemComponent,
     TasksComponent,
+    CategoriesComponent,
     ProfileComponent,
     UsersComponent,
     DecimalPipe,
@@ -109,6 +114,8 @@ import { AdminGuard } from './_guards/admin.guard';
     TitleColorService,
     SidenavToggleService,
     InvoiceService,
+    TaskService,
+    CategoryService,
     UserService,
     AuthService,
     NotificationService,
